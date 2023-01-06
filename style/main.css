@@ -27,6 +27,12 @@
 	align-items: center;
 	justify-content: space-between;
 }
+	
+.flex-column-between{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 .flex-around{
 	display: flex;
 	align-items: center;
@@ -117,9 +123,14 @@
 	padding-bottom: 50rpx;
 }
 
-
+.m-20{
+	margin: 20rpx;
+}
 .ml-10{
 	margin-left: 10rpx;
+}
+.mb-20{
+	margin-bottom: 20rpx;
 }
 
 .commonBtn{

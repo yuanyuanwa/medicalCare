@@ -36,6 +36,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/index/components/shopOrder",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

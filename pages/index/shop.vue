@@ -26,41 +26,21 @@
 					</view>
 				</view>
 				
-			
-			<!-- <view class="flex-around pb-40">
-				<view class="">
-					今日
-				</view>
-				<view class="">
-					本周
-				</view>
-				<view class="">
-					本月
-				</view>
-				<view class="">
-					筛选日期
-					<uni-icons type="bottom" size="20" color="white"></uni-icons>
-				</view>
-			</view> -->
 			<tabMenu></tabMenu>
 		</view>
-		<view class="order pt-40 p-20" >
-			<view>123</view>
-			<view>123</view>
-			<view>123</view>
-			<view>123</view>
-			
-			<view>123</view><view>123</view><view>123</view><view>123</view><view>123</view><view>123</view><view>123</view><view>123</view><view>123</view><view>123</view><view>123</view><view>123</view><view>123</view><view>123</view>
-		<view>789790</view><view>789790</view><view>789790</view><view>789790</view><view>789790</view>
+		<view class="order pt-40 p-20 mb-20" >
+			<order v-for="item in 5"/>
 		</view>
 	</view>
 </template>
 
 <script>
 	import tabMenu from '../../components/tabMenu/index.vue'
+	import order from './components/shopOrder.vue'
 	export default {
 		components: {
-			tabMenu
+			tabMenu,
+			order,
 		},
 		data() {
 			return {

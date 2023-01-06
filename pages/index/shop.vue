@@ -26,10 +26,10 @@
 					</view>
 				</view>
 				
-			<tabMenu></tabMenu>
+			<tabMenu class='pb-20'></tabMenu>
 		</view>
-		<view class="order pt-40 p-20 mb-20" >
-			<order v-for="item in 5"/>
+		<view class="order pt-40 p-20 " >
+			<order v-for="item in 5" />
 		</view>
 	</view>
 </template>

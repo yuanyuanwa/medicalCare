@@ -1,0 +1,134 @@
+	
+.red{
+	color: red;
+}
+
+/* flex相关	 */
+	
+.flex{
+	display: flex;
+}
+.flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex-left{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.flex-align-center{
+	display: flex;
+	align-items: center;
+}
+.flex-between{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.flex-around{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+/* font相关 */
+.font-bold{
+	font-weight: bold;
+}
+.font-18{
+	font-size: 18px;
+}
+.font-20{
+	font-size: 20px;
+}
+.font-22{
+	font-size: 22px;
+}
+.font-24{
+	font-size: 24px;
+}
+.font-28{
+	font-size: 28px;
+}
+.font-32{
+	font-size: 32px;
+}
+.font-36{
+	font-size: 36px;
+}
+.text-center{
+	text-align: center;
+}
+
+/* padding相关	*/
+.p-10{
+	padding: 10rpx;
+}
+.p-20{
+	padding: 20rpx;
+}
+.p-30{
+	padding: 30rpx;
+}
+
+
+.pl-10{
+	padding-left: 10rpx;
+}
+.pl-30{
+	padding-left: 30rpx;
+}
+
+.pr-30{
+	padding-right: 30rpx;
+}
+
+.pr-40{
+	padding-right: 40rpx;
+}
+
+
+
+.pt-10{
+	padding-top: 10rpx;
+}
+.pt-20{
+	padding-top: 20rpx;
+}
+.pt-30{
+	padding-top: 30rpx;
+}
+.pt-40{
+	padding-top: 40rpx;
+}
+.pt-180{
+	padding-top: 180rpx;
+}
+
+.pb-30{
+	padding-bottom: 30rpx;
+}
+.pb-40{
+	padding-bottom: 40rpx;
+}
+.pb-50{
+	padding-bottom: 50rpx;
+}
+
+
+.ml-10{
+	margin-left: 10rpx;
+}
+
+.commonBtn{
+	width: 300rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	background: #5878FC;
+	border-radius: 35rpx;
+}

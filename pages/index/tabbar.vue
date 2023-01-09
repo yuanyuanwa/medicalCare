@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="aaa">
+		<view class="">
 			<shop v-if="currentBar=='shop'"></shop>
 			<chat v-if="currentBar=='chat'"></chat>
 			<me v-if="currentBar=='person'"></me>
@@ -61,7 +61,7 @@
 		position: fixed;
 		bottom: 0;
 		background: white;
-		z-index: 1024;
+		z-index: 2;
 		box-shadow: 0 -1upx 6upx rgba(0, 0, 0, 0.1);
 	}
 

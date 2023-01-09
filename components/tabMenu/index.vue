@@ -14,11 +14,27 @@
 				筛选日期
 				<uni-icons type="bottom" size="20" color="white"></uni-icons>
 			</view> -->
-			<view class="tab-item" @click="testTabClick(index)" :class="tabIndex == index?'active':''"
+			<view class="tab-item flex-center" @click="testTabClick(index)" :class="tabIndex == index?'active':''"
 				v-for="(item,index) in tabList" :key="index">
-				<view class="p-10">{{item.name}}
-					<uni-icons v-if="item.name=='筛选日期'" type="bottom" size="20" color="white"></uni-icons>
+				<view class="p-10" v-if="item.name!=='筛选日期'">{{item.name}}
 				</view>
+				<uni-datetime-picker type="daterange" v-else v-model="single">
+					<view v-if="single==''">
+						筛选日期
+						<uni-icons type="bottom" size="20" color="white"></uni-icons>
+					</view>
+					<view v-else>
+						<view>
+							{{single[0]}}
+						</view>
+						<view class="text-center">
+							-
+						</view>
+						<view>
+							{{single[1]}}
+						</view>
+					</view>
+				</uni-datetime-picker>
 
 			</view>
 		</view>
@@ -29,6 +45,7 @@
 	export default {
 		data() {
 			return {
+				single: '',
 				tabIndex: 0,
 				tabList: [{
 					name: "今日"
@@ -63,7 +80,7 @@
 				transition: all 0.2s linear;
 				transform: translateX(-50%) scaleX(0);
 				content: '';
-				width: 60%;
+				width: 80%;
 				position: absolute;
 				left: 50%;
 				bottom: 20rpx;

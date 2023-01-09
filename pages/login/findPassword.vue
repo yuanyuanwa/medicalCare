@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<commonHeader :title="title" />
+		<commonHeader :title="title" :hasBack='true'/>
 		<view class="p-30">
 			<uni-forms :modelValue="formData" label-position="top" :rules="rules" ref="form" :labelWidth='140'>
 				<uni-forms-item label="手机号:" name="phone">

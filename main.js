@@ -1,4 +1,5 @@
 import App from './App'
+import myHome from './components/ball/home.vue'
 
 // #ifndef VUE3
 import Vue from 'vue'
@@ -7,6 +8,7 @@ App.mpType = 'app'
 const app = new Vue({
     ...App
 })
+Vue.component('my-home',myHome)	
 app.$mount()
 // #endif
 

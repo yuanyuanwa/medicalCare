@@ -111,7 +111,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.bg {
 		height: 100vh;
 		background-color: #fcfcfc;

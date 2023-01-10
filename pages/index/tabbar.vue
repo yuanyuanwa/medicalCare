@@ -54,7 +54,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.foot {
 		height: 100rpx;
 		width: 100%;

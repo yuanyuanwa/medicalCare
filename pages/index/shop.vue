@@ -36,7 +36,7 @@
 				<doctor />
 			</view>
 			<view v-for="item in 5" v-if="curTab=='pill'">
-				订单123
+				<pill></pill>
 			</view>
 		</view>
 	</view>
@@ -45,12 +45,14 @@
 <script>
 	import tabMenu from '../../components/tabMenu/index.vue'
 	import doctor from './components/shopDoctor.vue'
+	import pill from './components/shopPill.vue'
 	import commonHeader from '@/components/header/common.vue'
 	export default {
 		components: {
 			tabMenu,
 			doctor,
 			commonHeader,
+			pill,
 		},
 		data() {
 			return {
@@ -81,7 +83,7 @@
 	}
 </script>
 
-<style>
+<style scoped lang="scss">
 	.box {
 		background: #5878FC;
 		height: 95vh;

@@ -26,7 +26,7 @@
 <script>
 </script>
 
-<style>
+<style scoped>
 	.box{
 		height: 100%;
 		/* background: pink; */

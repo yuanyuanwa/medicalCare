@@ -121,7 +121,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	::v-deep .uni-forms-item__label {
 		font-size: 18upx;
 		color: black;

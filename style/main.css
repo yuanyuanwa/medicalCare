@@ -38,6 +38,11 @@
 	align-items: center;
 	justify-content: space-around;
 }
+.flex-end{
+	display: flex;
+	align-items: center;
+	justify-content:flex-end;
+}
 
 /* font相关 */
 .font-bold{
@@ -84,6 +89,9 @@
 }
 .p-30{
 	padding: 30rpx;
+}
+.p-40{
+	padding: 40rpx;
 }
 
 

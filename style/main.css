@@ -147,6 +147,13 @@
 .m-40{
 	margin: 40rpx;
 }
+
+.mt-20{
+	margin-top: 20rpx;
+}
+.mt-40{
+	margin-top: 40rpx;
+}
 .ml-10{
 	margin-left: 10rpx;
 }

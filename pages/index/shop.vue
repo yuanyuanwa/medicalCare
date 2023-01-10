@@ -35,7 +35,7 @@
 			<view v-for="item in 5" @click='toDoctor' v-if="curTab=='check'">
 				<doctor />
 			</view>
-			<view v-for="item in 5" v-if="curTab=='pill'">
+			<view v-for="item in 5" @click="toPill" v-if="curTab=='pill'">
 				<pill></pill>
 			</view>
 		</view>
@@ -69,7 +69,7 @@
 				console.log(789789789)
 				uni.navigateTo({
 					//关闭当前页面，跳转到应用内的某个页面。
-					url: '/pages/shop/doctor?id=1',
+					url: '/pages/shop/checkDetail?id=1',
 					// 此方式只是适合 uni.navigateTo() 方法
 					success: function(res) {
 						res.eventChannel.emit('argParams', {
@@ -77,6 +77,12 @@
 							name: '菠萝'
 						})
 					}
+				});
+			},
+			toPill(){
+				uni.navigateTo({
+					//关闭当前页面，跳转到应用内的某个页面。
+					url: '/pages/shop/pillDetail',
 				});
 			}
 		}

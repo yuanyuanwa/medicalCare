@@ -1,7 +1,7 @@
 <template>
 	<view class="shopPillBox flex-column-between mb-20">
 		<view>
-			<view class="p-10 m-20 font-20 shopPillTitle">
+			<view class="p-10 m-20 font-18 shopPillTitle">
 				<view class="">
 					订单编号：121321
 				</view>
@@ -22,14 +22,14 @@
 		</view>
 		<view>
 			<view class="flex-between p-20">
-				<view class="font-20">
+				<view class="font-18">
 					状态：已支付
 				</view>
-				<view class="font-20 font-bold" style="color: #FD9C3B;">
+				<view class="font-18 font-bold" style="color: #FD9C3B;">
 					支付金额：999999
 				</view>
 			</view>
-			<view class="p-20" style="border-top: 1px solid gainsboro;">开单时间：2023.01.10</view>
+			<view class="p-20 font-14" style="border-top: 1px solid gainsboro;">开单时间：2023.01.10</view>
 		</view>
 	</view>
 </template>

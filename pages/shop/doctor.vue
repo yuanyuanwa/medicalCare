@@ -51,13 +51,16 @@
 				<view class="btn" @click="changeBtn('pill')" :class="curBtn=='pill'?'btnActive':''">药品订单量：8</view>
 			</view>
 		</view>
-		<view class="font-18 font-bold pl-20 pb-20">问诊总收入：483元</view>
-		<view v-for="item in 5" v-if="curBtn=='check'">
-			<doctor />
-		</view>
-		<view v-for="item in 5" v-if="curBtn=='pill'">
-			药品
-			<!-- <doctor /> -->
+		<view class="font-18 font-bold pl-20 pb-20"><text v-if="curBtn=='check'">问诊总收入：</text><text v-if="curBtn=='pill'">药品总收入：</text>483元</view>
+		
+		<view class="m-20">
+			<view v-for="(item,index) in 5" v-if="curBtn=='check'" @click="toCheckDetail(index)">
+				<doctor />
+			</view>
+			<view v-for="item in 5" v-if="curBtn=='pill'">
+				<pill></pill>
+				<!-- <doctor /> -->
+			</view>
 		</view>
 		
 		<ball></ball>
@@ -69,11 +72,13 @@
 	import commonHeader from '@/components/header/common.vue'
 	import ball from '../../components/ball/index.vue'
 	import doctor from '../index/components/shopDoctor.vue'
+	import pill from '../index/components/shopPill.vue'
 	export default {
 		components: {
 			commonHeader,
 			ball,
-			doctor
+			doctor,
+			pill
 		},
 		data() {
 			return {
@@ -100,6 +105,13 @@
 		methods: {
 			changeBtn(type) {
 				this.curBtn=type
+			},
+			toCheckDetail(index){
+				console.log(index)
+				uni.navigateTo({
+					//关闭当前页面，跳转到应用内的某个页面。
+					url: '/pages/shop/checkDetail'
+				});
 			}
 		}
 	}

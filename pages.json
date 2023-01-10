@@ -67,6 +67,26 @@
             }
             
         }
+        ,{
+            "path" : "pages/shop/checkDetail",
+            "style" :                                                                                    
+            {
+                // "navigationBarTitleText": "",
+								"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/shop/pillDetail",
+            "style" :                                                                                    
+            {
+                // "navigationBarTitleText": "",
+								"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

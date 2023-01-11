@@ -55,6 +55,9 @@
 .font-14{
 	font-size: 14px;
 }
+.font-16{
+	font-size: 16px;
+}
 .font-18{
 	font-size: 18px;
 }
@@ -164,6 +167,9 @@
 .m-40{
 	margin: 40rpx;
 }
+.m-80{
+	margin: 80rpx;
+}
 
 .mt-20{
 	margin-top: 20rpx;
@@ -182,6 +188,16 @@
 .ml-10{
 	margin-left: 10rpx;
 }
+.ml-20{
+	margin-left: 20rpx;
+}
+.ml-40{
+	margin-left: 40rpx;
+}
+.ml-80{
+	margin-left: 80rpx;
+}
+
 
 .mb-20{
 	margin-bottom: 20rpx;

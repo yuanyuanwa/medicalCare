@@ -10,7 +10,7 @@
 			</uni-easyinput>
 		</view>
 		<view v-if="curBtn=='msg'">
-			<view v-for="(item,index) in 10" class="flex-between"
+			<view @click="toPerson()" v-for="(item,index) in 10" class="flex-between"
 				style="padding: 14rpx 40rpx;border-bottom: 1px solid gainsboro;">
 				<view class="flex-align-center">
 					<view class="" style="position: relative;">
@@ -27,7 +27,38 @@
 			</view>
 		</view>
 		<view v-else>
-			患者群
+			<view v-for="(item,index) in 10">
+				<view @click="changePer(index)" class="flex-between"
+					style="padding: 14rpx 40rpx;border-bottom: 1px solid gainsboro;">
+					<view class="flex-align-center">
+						<view class="" style="position: relative;">
+							<image class="image" :src="src">
+							</image>
+						</view>
+						<view class="">
+							<view><text class="font-bold">李小北-21位患者-工作室</text></view>
+							<view style="color: #3E404D;">您可以联系医生包括他名下所有患者</view>
+						</view>
+					</view>
+					<view style="color: #6E707A;">
+						<uni-icons type="bottom" size="30" v-if="curPer!==index"></uni-icons>
+						<uni-icons type="top" size="30" v-else></uni-icons>
+					</view>
+				</view>
+				<view class="ml-80 mb-20 per" :class="curPer===index?'activePer':''">
+					<view @click="toPerson" v-for="(item,index) in 10" class="flex-between"
+						style="padding: 14rpx 0rpx;border-bottom: 1px solid gainsboro;">
+						<view class="flex-align-center">
+							<view class="">
+								<image class="image" :src="src2">
+								</image>
+							</view>
+								<view><text class="font-bold">李1小北</text><text style="color:#808080;">（李小北）</text></view>
+						</view>
+						<view style="color: #6E707A;">09/17</view>
+					</view>
+				</view>
+			</view>
 		</view>
 
 	</view>
@@ -40,11 +71,27 @@
 				curBtn: 'msg',
 				value: '',
 				src: '../../static/img/123.jpeg',
+				src2: '../../static/img/111.jpeg',
+				curPer: '',
 			}
 		},
 		methods: {
 			changeBtn(type) {
 				this.curBtn = type
+			},
+			changePer(index) {
+				if (this.curPer === index) {
+					this.curPer = ''
+				} else {
+					this.curPer = index
+				}
+			},
+			toPerson(){
+				console.log(789)
+				uni.navigateTo({
+					//关闭当前页面，跳转到应用内的某个页面。
+					url: '/pages/chat/person'
+				});
 			}
 		}
 	}
@@ -90,5 +137,21 @@
 		top: 0rpx;
 		left: 130rpx;
 		z-index: 2;
+	}
+
+	.per {
+		height: 0rpx;
+		border-bottom: 1px solid gainsboro;
+		overflow: hidden;
+		transition: height 1s;
+	}
+
+	.activePer {
+		height: 300rpx;
+		overflow: auto;
+	}
+
+	.arrow180 {
+		transform: rotateZ(-180deg);
 	}
 </style>

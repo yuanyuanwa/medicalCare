@@ -92,7 +92,7 @@
 <style scoped lang="scss">
 	.box {
 		background: #5878FC;
-		height: 95vh;
+		height: 92vh;
 		color: white;
 	}
 
@@ -111,21 +111,13 @@
 	}
 
 	.order {
-		height: 50vh;
-		position: fixed;
-		bottom: 0px;
+		height: 42vh;
 		background: white;
 		width: 100%;
 		border-radius: 60rpx 60rpx 0rpx 0rpx;
 		overflow-y: auto;
 		color: black;
 		box-sizing: border-box;
-	}
-
-	.foot {
-		position: fixed;
-		top: 46vh;
-		width: 100%;
 	}
 
 	.content {

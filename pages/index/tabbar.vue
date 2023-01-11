@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="page">
 		<view class="">
 			<shop v-if="currentBar=='shop'"></shop>
 			<chat v-if="currentBar=='chat'"></chat>
@@ -55,6 +55,10 @@
 </script>
 
 <style scoped>
+	.page{
+		height: 92vh;
+		overflow: auto;
+	}
 	.foot {
 		height: 100rpx;
 		width: 100%;

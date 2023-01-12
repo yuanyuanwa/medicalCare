@@ -47,7 +47,7 @@
 				</view>
 				<view class="ml-80 mb-20 per" :class="curPer===index?'activePer':''">
 					<view @click="toPerson" v-for="(item,index) in 10" class="flex-between"
-						style="padding: 14rpx 0rpx;border-bottom: 1px solid gainsboro;">
+						style="padding: 14rpx 0rpx 14rpx 20rpx;border-bottom: 1px solid gainsboro;">
 						<view class="flex-align-center">
 							<view class="">
 								<image class="image" :src="src2">
@@ -143,7 +143,7 @@
 		height: 0rpx;
 		border-bottom: 1px solid gainsboro;
 		overflow: hidden;
-		transition: height 1s;
+		transition: height 0.5s;
 	}
 
 	.activePer {

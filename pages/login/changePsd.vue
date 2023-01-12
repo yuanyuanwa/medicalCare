@@ -1,25 +1,12 @@
 <template>
 	<view>
-		<commonHeader :title="title" :hasBack='true'/>
+		<commonHeader :title="title" :hasBack='true' />
 		<view class="p-30">
 			<uni-forms :modelValue="formData" label-position="top" :rules="rules" ref="form" :labelWidth='140'>
-				<uni-forms-item label="手机号:" name="phone">
-					<view class="flex-align-center">
-						<!-- <input type="password" style='width:0;height:0;min-height:0' />
-						<input type="text" autocomplete="off" style='width:0;height:0;min-height:0' /> -->
-						<input class="input" style="flex-grow: 1;" type="text" v-model="formData.phone"
-							placeholder="请输入姓名" />
-						<view :class="btn" @click="getCode">
-							{{btnText}}
-						</view>
-					</view>
+				<uni-forms-item label="旧密码:" name="code">
+					<input class="input" type="password" v-model="formData.code" placeholder="请输入旧密码" />
 				</uni-forms-item>
-				<uni-forms-item label="输入验证码:" name="code">
-				<!-- 	<input type="password" style='width:0;height:0;min-height:0' />
-					<input type="text" autocomplete="off" style='width:0;height:0;min-height:0' /> -->
-					<input class="input" type="text" v-model="formData.code" placeholder="请输入姓名" />
-				</uni-forms-item>
-				<uni-forms-item label="设置新密码:" name="newPassword">
+				<uni-forms-item label="新密码:" name="newPassword">
 					<input autocomplete="new-password " class="input" type="password" v-model="formData.newPassword"
 						placeholder="请输入新密码" />
 				</uni-forms-item>
@@ -44,29 +31,8 @@
 		},
 		data() {
 			return {
-				title: '找回密码',
-				timer: '',
-				btn: 'btn',
-				count:'-1',
-				formData: {
-					phone: '',
-					code: '',
-					newPassword: '',
-					passwordTwo: '',
-				},
+				title: '修改密码',
 				rules: {
-					phone: {
-						rules: [{
-								required: true,
-								errorMessage: '请输入',
-							},
-							// {
-							// 	minLength: 3,
-							// 	maxLength: 5,
-							// 	errorMessage: '姓名长度在 {minLength} 到 {maxLength} 个字符',
-							// }
-						]
-					},
 					newPassword: {
 						rules: [{
 							required: true,
@@ -85,33 +51,26 @@
 							errorMessage: '请输入',
 						}]
 					},
-				}
+				},
+				formData: {
+					code: '',
+					newPassword: '',
+					passwordTwo: '',
+				},
 			}
 		},
-		 computed: {
-		    btnText: function () {
-		      return this.count >= 0 ? this.count + 's 后重发' : '获取验证码';
-		    },
-		  },
 		methods: {
-			getCode() {
-				if (!this.timer) {
-					this.count = 60;
-					this.btn = 'selectBtn';
-					this.timer = setInterval(() => {
-						if (this.count > 0 && this.count <= 60) {
-							this.count--;
-						} else {
-							this.count = -1,
-							this.btn = 'btn';
-							clearInterval(this.timer);
-							this.timer = null;
-						}
-					}, 1000);
-				}
-			},
-			submit(){
+			submit() {
 				this.$refs.form.validate().then(res => {
+					uni.showToast({
+						title: '修改成功，请重新登录',
+					});
+					setTimeout(() => {
+						uni.navigateTo({
+							//关闭当前页面，跳转到应用内的某个页面。
+							url: '/pages/login/index'
+						});
+					}, 500)
 					console.log('表单数据信息：', res);
 				}).catch(err => {
 					console.log('表单错误信息：', err);
@@ -121,7 +80,7 @@
 	}
 </script>
 
-<style scoped>
+<style>
 	::v-deep .uni-forms-item__label {
 		font-size: 18px;
 		color: black;

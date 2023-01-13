@@ -30,8 +30,8 @@
 			<view class="flex-center pt-30">
 				<view @click="goregirect" class="loginBtn">登录</view>
 			</view>
-			<view class="flex-center pt-10">
-				<label style="font-size: 14upx;"><radio value="r2" style="transform:scale(0.7);"/>我已阅读<text style="color:#5878FC;">《隐私政策》</text>和<text style="color:#5878FC;">《用户使用协议》</text></label>
+			<view class="flex-center pt-10" :class="isshake?'a-shake':''">
+				<label style="font-size: 14upx;" @click="changeRadio"><radio value="r2"  :checked="checked" v-model="isAdmin" style="transform:scale(0.7);"/>我已阅读<text style="color:#5878FC;">《隐私政策》</text>和<text style="color:#5878FC;">《用户使用协议》</text></label>
 			</view>
 		</view>
 	</view>
@@ -50,6 +50,9 @@
 					age: '',
 					code: '',
 				},
+				isshake:false,
+				checked:false,
+				isAdmin:'',
 				rules: {
 					// 对name字段进行必填验证
 					name: {
@@ -81,7 +84,14 @@
 		},
 		methods: {
 			goregirect() {		
+				this.isshake=!this.checked
+				setTimeout(()=>{
+					this.isshake=false
+				},1000)
 				this.$refs.form.validate().then(res => {
+					if(!this.checked){
+						return
+					}
 					console.log('表单数据信息：', res);
 					uni.showToast({
 						title: '登录成功',
@@ -106,6 +116,9 @@
 					//关闭当前页面，跳转到应用内的某个页面。
 					url: '/pages/login/findPassword'
 				});
+			},
+			changeRadio(){
+				this.checked=!this.checked
 			}
 		}
 	}
